@@ -1,0 +1,144 @@
+﻿insert into Students(sid,studentsName,mid)
+values("365","bow","CS")
+----------------------------------------------------------
+insert into Majors(mid,MajorsName)
+values("BL","Biology")
+--------------------------------------------------------------
+Update Students
+Set mid=“BL”
+Where sid=“384”
+----------------------------------------------------------------
+Select * from Students
+-----------------------------------------------------------------
+Select studentName ,mid from Students
+where mid="CS"
+--------------------------------------------------------------
+Select studentName,MajorName
+From Students Inner Join Majors
+On Students.mid = Majors.mid;
+-------------------------------------------------------------
+//???????????????????
+SELECT COUNT(*) FROM `student` WHERE SName '%Wilaiwan%'
+---------------------------------------------------------------
+//????????????????
+SELECT COUNT(*) FROM `student`
+--------------------------------------------------------------
+//???????????????
+SELECT * FROM `student`
+---------------------------------------------------------------------
+//???????????????
+INSERT INTO `student`(`SName`, `SCode`) 
+VALUES ('Mara Macare','5904101410'),('Jabjai Maitay','5904101411'),
+('Nunee Maime','5904101412')
+------------------------------------------------------------------------------
+//???????????
+UPDATE `student` 
+SET `SName` = 'Weeraya P.', `SCode` = '5904101365' 
+WHERE `student`.`SId` = 4;
+------------------------------------------------------------------------------
+//
+DELETE FROM `student` WHERE SId = 8
+------------------------------------------------------------------------------
+//โชว์แต่ ชื่อ // SName all
+SELECT DISTINCT SName FROM `student`
+------------------------------------------------------------------------------
+//อับเดทชื่อ Namii Maima และ code 5904101415 ที่ sid 1
+UPDATE `student` SET `SName`='Namii Maima',`SCode`='5904101415' WHERE SId = 1
+------------------------------------------------------------------------------
+//อัพเดทได้หลายค่าในการกดGOครั้งเดียว
+UPDATE `student` 
+SET `MId`= 1
+WHERE SId = 2;
+UPDATE `student` 
+SET `MId`= 1
+WHERE SId = 3;
+------------------------------------------------------------------------------
+//ON เป็นเงื่อนไขของINNERJOIN major กับ student ที่มีเรครอดเหมือนกัน
+//แสดงข้อมูลเลข ID ของPimarykey ของmajor เพื่อดูชื่อสาขา
+//ที่ต้องมีตารางอีกตารางที่เป็นชื่อสาขาแยกออกไปเพราะลดพื้นที่และง่ายต่อการค้นหา
+SELECT student.SName ,student.SCode,major.MName
+FROM student
+INNER JOIN major 
+ON student.MId = major.MId
+------------------------------------------------------------------------------
+//เปลี่ยนชื่อเรคคอด
+SELECT student.SName AS 'student Name' ,student.SCode AS 'student Code',major.MName AS 'major Name' FROM student INNER JOIN major ON student.MId = major.MId
+------------------------------------------------------------------------------
+//โชว์ชื่อสาขาที่มันซ้ำกันโดยง่ายที่และแน่นอนที่สุด
+//หากใส่ชื่อ หรือ ใส่% มีเปอร์เซ็นผิดสูง
+SELECT student.SName AS 'student Name' ,student.SCode AS 'student Code',major.MName AS 'student major' 
+FROM student 
+INNER JOIN major ON student.MId = major.MId
+WHERE major.mid = 1
+------------------------------------------------------------------------------
+//เพิ่มวิชา//คลาสเข้ามา
+INSERT INTO class(CName,CCode)
+VALUE ("Database Design","cs-342"),
+	("Enlist","en-241"),
+    ("Programming","pm-999"),
+    ("Math","m-000")
+------------------------------------------------------------------------------
+//วิธีการเพิ่มตารางหรือเชื่อมตารางที่เอาPKไปเชื่อมกับอีกตาราง
+ALTER TABLE student
+ADD (CId//1ชื่อคลอลัม) (INT//2ไทป์) (NOT NULL//3เซตนอล) (AFTER//4คำสั่งเพิ่มไปที่หลัง MId) MId
+------------------------------------------------------------------------------
+//เพิ่มวิชาเข้าไป
+UPDATE student SET CId=1 WHERE SId=1;
+UPDATE student SET CId=2 WHERE SId=2;
+UPDATE student SET CId=3 WHERE SId=3;
+UPDATE student SET CId=4 WHERE SId=4;
+------------------------------------------------------------------------------
+//ดรอปตาราง
+ALTER TABLE student DROP CId
+------------------------------------------------------------------------------
+//เป็นการจอยสติวเด้นกับคลาสรีจีสเตอและการจอยคลาสกับคลาสรีจิสเตอ
+SELECT student.*,classregister.*,class.*
+FROM student 
+INNER JOIN classregister
+ON student.SId = classregister.SId
+INNER JOIN class
+ON classregister.CId = class.CId
+------------------------------------------------------------------------------
+//ดูชื่อรหัส ชื่อวิชารหัสวิชา
+SELECT student.SName,student.SCode,class.CName,class.CCode
+FROM student 
+INNER JOIN classregister
+ON student.SId = classregister.SId
+INNER JOIN class
+ON classregister.CId = class.CId
+------------------------------------------------------------------------------
+//เชื่อมข้อมูลต่อตารางกัน
+SELECT student.*,classregister.*,class.*
+FROM student 
+JOIN classregister
+ON student.SId = classregister.SId
+JOIN class
+ON classregister.CId = class.CId
+ORDER BY student.SName
+------------------------------------------------------------------------------
+//join กัน 
+SELECT student.*,major.*,classregister.* ,class.*
+FROM student 
+JOIN major 
+ON student.MId = major.MId
+
+JOIN classregister
+ON student.SId = classregister.SId
+
+JOIN class
+ON classregister.CId = class.CId
+ORDER BY student.SName 
+-------------------------------------------------------------------------------------------
+//จะเห็นแค่ SName Scode Mname Cname Ccode และแสดงแค่คนเดียว
+SELECT student.SName,student.SCode,major.MName ,class.CName,class.CCode
+FROM student 
+JOIN major 
+ON student.MId = major.MId
+
+JOIN classregister
+ON student.SId = classregister.SId
+
+JOIN class
+ON classregister.CId = class.CId
+WHERE student.SId = 1 //แสดงแค่คนเดียว
+ORDER BY student.SName 

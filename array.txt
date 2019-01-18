@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello PHP - DAY4</title>
+		<style type="text/css">
+			body{
+				background-color: #FFEEDD;
+			}
+	</style>	
+	
+	</head>	
+
+	<body>
+		<?php
+			$cars  = array("Toyota","Honda","Nissan","Benz");
+			$cars[1] = "MG";//เพิ่มค่าใหม่ในตำแหน่งเดิม
+			$cars[4] = "Mazda";//เพิ่มค่าที่ตำแหน่งใหม่
+			echo $cars[0]."<br>";
+			echo $cars[1]."<br>";
+			echo $cars[2]."<br>";
+			echo $cars[3]."<br>";
+			echo "Number ".count($cars)."<br>";//นับจำนวนข้อมูล
+			print_r($cars);//บอกตำแหน่งของข้อมูล
+			
+
+		?>
+
+	</body>
+</html>
+//แบบใส่ค่าก่อน
+ *********************************************************************************************************
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello PHP - DAY4</title>
+		<style type="text/css">
+			body{
+				background-color: #FFEEDD;
+				color: #FF99CC;
+			}
+	</style>	
+	
+	</head>	
+
+	<body>
+		<?php
+			$cars = array();
+			$cars[0] = "Nissan";
+			$cars[1] = "Honda";
+			$cars[2] = "Toyota";
+			$cars[3] = "Benz";
+			$cars[4] = "Mazda";
+
+			$arrLen = count($cars);
+
+			for ($i=0; $i < $arrLen; $i++) { 
+				echo $cars[$i]."<br>";
+			}
+
+
+			
+
+		?>
+
+	</body>
+</html>
+//แบบกำหนดค่าทีหลัง
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello PHP - DAY4</title>
+		<style type="text/css">
+			body{
+				background-color: #FFEEDD;
+				color: #FF99CC;
+			}
+	</style>	
+	
+	</head>	
+
+	<body>
+		<?php
+			$users = array(
+				"Peter"=>"Pit",//สามารถเก็บข้อมูลได้ทั้งแบบข้อความและตัวเลข
+				"Lewisia"=>18,
+				"Rodina"=>20
+			);
+
+			echo "Peter nickname is " . $users["Peter"]."."."<br>";//คือการดึงค่าข้างหลังมาแสดงโดยคีย์เวิดร์คือตัวหน้า
+			echo "Lewisia is ".$users["Lewisia"]." years old."."<br>";
+			echo $users["Rodina"]."<br>";
+		?>
+
+	</body>
+</html>
+//foreach เก็บค่า Key and Value
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello PHP - DAY4</title>
+		<style type="text/css">
+			body{
+				background-color: #FFEEDD;
+				color: #FF99CC;
+			}
+	</style>	
+	
+	</head>	
+
+	<body>
+		<?php
+			
+			$users = array(
+				"Peter"=>"Pit",//สามารถเก็บข้อมูลได้ทั้งแบบข้อความและตัวเลข
+				"Lewisia"=>18,
+				"Rodina"=>20
+			);
+			$i=1;//i แสดงค่าลำดับ
+			foreach ($users as $key => $value) {//เก็บค่า key and value ของข้อมูล
+				echo $i." Key is ".$key." , Value is ".$value;
+				echo "<br>";
+				$i++;
+
+			}
+		?>
+
+	</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello PHP - DAY4</title>
+		<style type="text/css">
+			body{
+				background-color: #FFEEDD;
+				color: #FF99CC;
+			}
+	</style>	
+	
+	</head>	
+
+	<body>
+		<?php
+			
+			// $arr2D = array(array("Kik", 20),array("Got", 17),array("Mew", 25));
+
+			// echo $arr2D[2][0]; //[0][0] show Kik, [2][0][2] show t in name Got
+			// echo $arr2D[2][1];
+
+			$arr2D = array(array("Kukkik", 20 , 1997 , "Nisson" , "255k"),
+							array("Got", 17 , 2000),
+							array("Mew", 25 , 1992),
+							array("Kat", 30 , 1988),
+							array("Bow", 21 , 1996 , "Honda"),
+						  );  
+
+			$arrLen = count($arr2D);
+			for ($i=0; $i < $arrLen; $i++) { 
+				for ($j=0; $j < $arrLen; $j++) { 
+				echo $arr2D[$i][$j];
+				echo "<br>";
+				}
+			}
+	
+		?>
+
+	</body>
+</html>
+
+
+

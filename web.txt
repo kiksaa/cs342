@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello PHP - INDEX</title>
+		<style type="text/css">
+			body{
+				background-color: #FFEEDD;
+				color: #FF99CC;
+			}
+	</style>	
+	
+	</head>	
+
+	<body>
+		<form>
+			<input type="text" name="inputFname" size="10" placeholder="Enter">
+		</form>
+
+	</body>
+</html>
+//type ประเถทข้อมูล size ขนาดของช่อง  placeholder ตัวหนังสือสีเทาๆในช่อง value ค่าเริ่มต้นในช่อง buttonสร้างปุ่ม submitใส่ข้อมูลใหม่ลงไป
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello PHP - INDEX</title>
+		<style type="text/css">
+			body{
+				background-color: #ffe6ee;
+			}
+	</style>	
+	
+	</head>	
+
+	<body>
+		<form method="get"  action="Wecome.php">
+			<input type="text" name="inputFname" size="10" placeholder="Fast name">
+			<br>
+			<input type="text" name="inputLname" size="10" placeholder="Last name">
+			<br>
+			<input type="submit" value ="SUBMIT">
+
+		</form>
+
+	</body>
+</html>
+//method ตั้งค่าประเภทการรับค่า action ส่งไปที่ไหน
+//method = "post" จะไม่แสดงคาที่ส่งมาในแท็บเว็บ ส่งมาแบบตรงๆไม่มีการ submit
+---------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> WECOME </title>
+	</head>	
+		<?php
+			$txtFirstname = $_POST["inputFname"];
+			$txtLastname = $_POST["inputLname"];
+			echo $txtFirstname." ".$txtLastname;
+		?>
+
+	<body>
+		
+	</body>
+</html>
+*********************************************************************
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> WECOME </title>
+	</head>	
+		<?php
+		if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+			$txtFirstname = $_POST["inputFname"];
+			$txtLastname = $_POST["inputLname"];
+
+			echo $txtFirstname." ".$txtLastname;
+		}else{
+			echo "Page does not exit.";
+		}
+		
+		?>
+
+	<body>
+		
+	</body>
+</html>
+-----------------------------------------------------------------------
+

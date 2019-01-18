@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+	</head>
+
+	<body>
+		<b> bold text </b>
+		<br>text</br>
+<h1>headering</h1>
+HIIIIIIIIIII
+<h2>headering</h2>
+<h3>headering</h3>
+<h4>headering</h4>
+<h5>headering</h5>
+<h6>headering</h6>
+<h7>headering</h7>
+
+	</body>
+</html>
+---------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+	</head>
+
+	<body>
+		<a href="https://www.w3schools.com/html/"target="_blank">Visit our HTML tutorial</a>
+			
+		<img src = "img/01.jpg">
+	</body>
+</html>
+
+//target เปิดแท็บหนเาจอใหม่หน้าจอเก่ายังอยู่//
+//ถ้ารูปไม่ได้อยู่ในที่อยู่เดียวกันต้องบอกที่อยู่ของรูปด้วย//
+----------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+	</head>
+
+	<body>
+		<a href="https://www.w3schools.com/html/"target="_blank"><img src = "img/01.jpg"></a>
+			
+		
+	</body>
+</html>
+
+//รูปจะเป็นที่อยู่ของลิงค์คลิกที่รูปจะไปตามลิงค์
+-----------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+	</head>
+
+	<body>
+		<ul>
+			<li>Lists 1</li>
+			<li>Lists 2</li>
+			<li>Lists 3</li>
+			<li>Lists 4</li>
+			<li>Lists 5</li>
+			
+		</ul>
+		<ol>
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+			<li>four/li>
+			<li>five</li>
+		</ol>
+			
+		
+	</body>
+</html>
+//ulเป็นการแสดงผลแบบจุด
+//olเป็นการแสดงผลแบบตัวเลข
+-------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+	</head>
+
+	<body>
+		<table border="1"> 
+			<tr>
+				<th>header1</th>
+				<th>header2</th>
+				<th>header3</th>
+			</tr>
+			<tr>
+				<td>row1 column1</td>
+				<td>row1 column2</td>
+				<td>row1 column3</td>
+			</tr>
+			<tr>
+				<td>row2 column1</td>
+				<td colspan="2">row2 column2</td>
+				<!--<td>row2 column3</td>-->
+			</tr>
+			<tr>
+				<td>row3 column1</td>
+				<td>row3 column2</td>
+				<td>row3 column3</td>
+			</tr>
+			<tr>
+				<td>row4 column1</td>
+				<td>row4 column2</td>
+				<td>row4 column3</td>
+			</tr>
+
+		</table>
+			
+		
+	</body>
+</html>
+borde ขอบตาราง
+tr สร้างแถว
+td สร้างคอลัม
+th ตัวหนเาในตาราง
+colspan ผสานเซลล์ตาราง
+<!--  --> ซ้อนโค้ด
+--------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+	</head>
+
+	<body>
+		<table border="1" bgcolor="Red"> <!-- bgcolor สีตาราง-->
+			<tr>
+				<th>header1</th>
+				<th>header2</th>
+				<th>header3</th>
+			</tr>
+			<tr>
+				<td>row1 column1</td>
+				<td>row1 column2</td>
+				<td>row1 column3</td>
+			</tr>
+			<tr>
+				<td>row2 column1</td>
+				<td colspan="2" bgcolor="blue">row2 column2</td>
+				<!--<td>row2 column3</td>-->
+			</tr>
+			<tr>
+				<td>row3 column1</td>
+				<td>row3 column2</td>
+				<td>row3 column3</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">row4 column1</td><!--align="center"ให้ข้อความอยู่ตรงกลางตาราง-->
+				<!--<td>row4 column2</td>
+				<td>row4 column3</td>-->
+			</tr>
+
+		</table>
+			
+		
+	</body>
+</html>
+--------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+		
+	</head>
+
+	<body>
+		<table border="1" style="background-color:pink; color: #F0FFF0;"> <!-- ="background-color:pink; สีพื้นหลัง color: white; สีตัวอักษร-->
+			<tr>
+				<th>header1</th>
+				<th>header2</th>
+				<th>header3</th>
+			</tr>
+			<tr>
+				<td>row1 column1</td>
+				<td>row1 column2</td>
+				<td>row1 column3</td>
+			</tr>
+			<tr>
+				<td>row2 column1</td>
+				<td colspan="2" bgcolor="#FA8072">row2 column2</td>
+				<!--<td>row2 column3</td>-->
+			</tr>
+			<tr>
+				<td>row3 column1</td>
+				<td>row3 column2</td>
+				<td>row3 column3</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">row4 column1</td><!--align="center"ให้ข้อความอยู่ตรงกลางตาราง-->
+				<!--<td>row4 column2</td>
+				<td>row4 column3</td>-->
+			</tr>
+
+		</table>
+			
+		
+	</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+		<style type="text/css">
+			.table1{				
+				background-color:pink; 
+				color: #F0FFF0;
+			}
+			body {
+				background-color: lightgray;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<table border="1" class="table1"> 
+			<tr>
+				<th>header1</th>
+				<th>header2</th>
+				<th>header3</th>
+			</tr>
+			<tr>
+				<td>row1 column1</td>
+				<td>row1 column2</td>
+				<td>row1 column3</td>
+			</tr>
+			<tr>
+				<td>row2 column1</td>
+				<td colspan="2" bgcolor="#FA8072">row2 column2</td>
+				<!--<td>row2 column3</td>-->
+			</tr>
+			<tr>
+				<td>row3 column1</td>
+				<td>row3 column2</td>
+				<td>row3 column3</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">row4 column1</td><!--align="center"ให้ข้อความอยู่ตรงกลางตาราง-->
+				<!--<td>row4 column2</td>
+				<td>row4 column3</td>-->
+			</tr>
+
+		</table>
+			
+		
+	</body>
+</html>
+body {
+	background-color: lightgray;
+}เปลี่ยนสีพื้นหลังของเว็บ
+
+<style type="text/css">
+.table1{				
+	background-color:pink; 
+	color: #F0FFF0;
+}เป็นการสร้างแอดทีบิวในการกำหนดสีและเรียกใช้ในตาราง
+----------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Hello HTML </title>	
+		<style type="text/css">
+			.table1{				
+				background-color:pink; 
+				color: #F0FFF0;
+				border-color: black;
+				border-width: 1px;
+				border-style:solid;
+				border-spacing: 0px;
+			}
+			.table1 td {
+				border:1px solid black;
+			}
+			.td1{
+				background-color: black;
+				color: white;
+				text-align: center;
+			}
+			body {
+				background-color: lightgray;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<table class="table1"> 
+			<tr>
+				<th>header1</th>
+				<th>header2</th>
+				<th>header3</th>
+			</tr>
+			<tr>
+				<td>row1 column1</td>
+				<td>row1 column2</td>
+				<td>row1 column3</td>
+			</tr>
+			<tr>
+				<td>row2 column1</td>
+				<td colspan="2" bgcolor="#FA8072" class="td1">row2 column2</td>
+				<!--<td>row2 column3</td>-->
+			</tr>
+			<tr>
+				<td>row3 column1</td>
+				<td>row3 column2</td>
+				<td>row3 column3</td>
+			</tr>
+			<tr>
+				<td colspan="3"  class="td1">row4 column1</td><!--align="center"ให้ข้อความอยู่ตรงกลางตาราง-->
+				<!--<td>row4 column2</td>
+				<td>row4 column3</td>-->
+			</tr>
+
+		</table>
+			
+		
+	</body>
+</html>
